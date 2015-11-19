@@ -3,8 +3,6 @@ from optparse import OptionParser
 # import sys
 
 parser = OptionParser()
-parser.add_option("-q", "--quiet", action="store_false", dest="verbose",
-                  default=True, help="don't print status messages to stdout")
 parser.add_option("-i", "--image", type="string", dest="imagename",
                   help="Name of Image")
 parser.add_option("-d", "--diff", type="string", dest="diff",
@@ -35,7 +33,4 @@ def is_grey_scale(img_path):
                 return False
     return True
 
-if (bool(options.verbose) == False):
-    is_grey_scale(img_path)
-else:
-    print (is_grey_scale(img_path))
+print (is_grey_scale(img_path))
